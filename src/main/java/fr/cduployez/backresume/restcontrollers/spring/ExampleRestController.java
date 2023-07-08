@@ -1,4 +1,4 @@
-package fr.cduployez.backresume.restcontroller.spring;
+package fr.cduployez.backresume.restcontrollers.spring;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
