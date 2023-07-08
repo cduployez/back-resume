@@ -1,0 +1,10 @@
+---
+version: "3.9"
+
+services:
+  cduployez-back-resume:
+    container_name: cduployez-back-resume
+    build: ../
+    image: cduployez-back-resume
+    ports:
+      - "10001:8080"
