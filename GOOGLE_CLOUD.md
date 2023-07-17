@@ -139,3 +139,16 @@ ID                                    CREATE_TIME                DURATION  SOURC
                                       STATUS
 88753229-3e8f-455e-a281-01115a62a3b1  2023-07-14T19:17:19+00:00  1M22S     gs://back-resume_cloudbuild/source/1689362238.530258-7c3de1e1361c42e383d2ce4b48fe2059.tgz  europe-west9-docker.pkg.dev/back-resume/resume-repository/back-resume (+1 more)  SUCCESS
 ```
+
+# Deploy app
+
+```sh
+cd helm-chart
+kubectl apply -f deployment.yaml
+```
+
+Output:
+```
+Warning: autopilot-default-resources-mutator:Autopilot updated Deployment default/back-resume: adjusted resources to meet requirements for containers [back-resume] (see http://g.co/gke/autopilot-resources)
+deployment.apps/back-resume created
+```
