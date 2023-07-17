@@ -174,3 +174,17 @@ back-resume    LoadBalancer   10.89.1.104   34.155.197.167   80:32190/TCP   85s
 hello-server   LoadBalancer   10.89.2.115   34.163.40.252    80:31645/TCP   2d13h
 kubernetes     ClusterIP      10.89.0.1     <none>           443/TCP        2d14h
 ```
+
+# Deploy helm-chart
+
+First time:
+```sh
+cd helm-chart
+helm package . && helm install back-resume back-resume-helm-chart-0.0.1.tgz
+```
+
+If existing in GKE:
+```sh
+cd helm-chart
+helm package . && helm install back-resume back-resume-helm-chart-0.0.1.tgz
+```
