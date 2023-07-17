@@ -39,10 +39,20 @@ spec:
           httpGet:
             path: /actuator/health/liveness
             port: http
+          # Should wait 15 seconds before performing the first probe
+          initialDelaySeconds: 15
+          # The application will have a maximum of 5 minutes (30 * 10 = 300s)
+          periodSeconds: 10
+          failureThreshold: 30
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
             port: http
+          # Should wait 15 seconds before performing the first probe
+          initialDelaySeconds: 15
+          # The application will have a maximum of 5 minutes (30 * 10 = 300s)
+          periodSeconds: 10
+          failureThreshold: 30
         resources:
           requests:
             memory: {{ .Values.resources.requests.memory }}

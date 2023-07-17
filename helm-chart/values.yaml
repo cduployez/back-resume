@@ -15,13 +15,13 @@ service:
 
 resources:
   requests:
-    cpu: 100m
-    memory: 128Mi
-    ephemeral_storage: 128Mi
+    cpu: 250m
+    memory: 256Mi
+    ephemeral_storage: 256Mi
   limits:
-    cpu: 100m
-    memory: 128Mi
-    ephemeral_storage: 128
+    cpu: 250m
+    memory: 256Mi
+    ephemeral_storage: 256Mi
 
 replicaCount: 1
 
