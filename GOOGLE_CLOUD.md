@@ -140,8 +140,9 @@ ID                                    CREATE_TIME                DURATION  SOURC
 88753229-3e8f-455e-a281-01115a62a3b1  2023-07-14T19:17:19+00:00  1M22S     gs://back-resume_cloudbuild/source/1689362238.530258-7c3de1e1361c42e383d2ce4b48fe2059.tgz  europe-west9-docker.pkg.dev/back-resume/resume-repository/back-resume (+1 more)  SUCCESS
 ```
 
-# Deploy app
+# Deploy to GKE
 
+Deploy deployment:
 ```sh
 cd helm-chart
 kubectl apply -f deployment.yaml
@@ -151,4 +152,25 @@ Output:
 ```
 Warning: autopilot-default-resources-mutator:Autopilot updated Deployment default/back-resume: adjusted resources to meet requirements for containers [back-resume] (see http://g.co/gke/autopilot-resources)
 deployment.apps/back-resume created
+```
+
+Deploy service (+ load balancer):
+```sh
+kubectl apply -f service.yaml
+```
+
+Output:
+```
+service/back-resume created
+```
+
+```sh
+kubectl get services
+```
+
+```
+NAME           TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
+back-resume    LoadBalancer   10.89.1.104   34.155.197.167   80:32190/TCP   85s
+hello-server   LoadBalancer   10.89.2.115   34.163.40.252    80:31645/TCP   2d13h
+kubernetes     ClusterIP      10.89.0.1     <none>           443/TCP        2d14h
 ```
