@@ -21,6 +21,12 @@ backResume:
     className: nginx
     path: "/back-resume"
 
+  certificate:
+    issuerName: letsencrypt-production
+    acme:
+      server: https://acme-v02.api.letsencrypt.org/directory
+    email: c.duployez+githubpro@gmail.com
+
   # Service
   service:
     http:

@@ -1,9 +1,0 @@
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
-metadata:
-  name: {{ include "helm-chart.back-resume.fullname" . }}
-  labels:
-    {{- include "helm-chart.back-resume.labels" . | nindent 4 }}
-spec:
-  domains:
-    - {{ .Values.backResume.host }}

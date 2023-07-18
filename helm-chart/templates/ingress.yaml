@@ -5,11 +5,15 @@ metadata:
   labels:
     {{- include "helm-chart.back-resume.labels" . | nindent 4 }}
   annotations:
+    kubernetes.io/ingress.class: {{ .Values.backResume.ingress.className }}
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-    networking.gke.io/managed-certificates: {{ include "helm-chart.back-resume.fullname" . }}
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/issuer: {{ .Values.backResume.certificate.issuerName }}
 spec:
-  ingressClassName: {{ .Values.backResume.ingress.className }}
+  tls:
+  - hosts:
+    - {{ .Values.backResume.host }}
+    secretName: {{ include "helm-chart.back-resume.fullname" . }}-tls
   rules:
     - host: {{ .Values.backResume.host }}
       http:
