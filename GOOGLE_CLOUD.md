@@ -194,56 +194,10 @@ helm package . && helm install back-resume back-resume-helm-chart-0.0.1.tgz
 Links:
 * https://cert-manager.io/docs/tutorials/acme/nginx-ingress/
 * https://medium.com/bluekiri/deploy-a-nginx-ingress-and-a-certitificate-manager-controller-on-gke-using-helm-3-8e2802b979ec
-
-```sh
-kubectl create namespace cert-manager
-# namespace/cert-manager created
-```
-
-```sh
-helm repo add jetstack https://charts.jetstack.io
-# "jetstack" has been added to your repositories
-helm repo update
-# Hang tight while we grab the latest from your chart repositories...
-# ...Successfully got an update from the "ingress-nginx" chart repository
-# ...Successfully got an update from the "jetstack" chart repository
-# Update Complete. ⎈Happy Helming!⎈
-```
+* Workaround: https://github.com/cert-manager/cert-manager/issues/3717
 
 ```sh
 # helm install cert-manager --namespace cert-manager jetstack/cert-manager
 # Workaround needed for auto-pilot GKE cluster
 helm install --create-namespace --namespace cert-manager --set installCRDs=true --set global.leaderElection.namespace=cert-manager cert-manager jetstack/cert-manager
-```
-
-Output:
-```
-
-```
-
-```sh
-
-```
-
-Output:
-```
-
-```
-
-```sh
-
-```
-
-Output:
-```
-
-```
-
-```sh
-
-```
-
-Output:
-```
-
 ```
