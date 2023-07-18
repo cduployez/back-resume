@@ -2,34 +2,48 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-nameOverride: "back-resume"
-fullnameOverride: "back-resume"
+backResume:
+  # Names
+  nameOverride: "back-resume"
+  fullnameOverride: "back-resume"
 
-image:
-  repository: europe-west9-docker.pkg.dev/back-resume/resume-repository/back-resume
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  # Replicas
+  replicaCount: 1
 
-service:
-  type: LoadBalancer
-  port: 80
-  containerPort: 8080
+  # Images
+  image:
+    repository: europe-west9-docker.pkg.dev/back-resume/resume-repository/back-resume
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "latest"
 
-resources:
-  requests:
-    cpu: 250m
-    memory: 256Mi
-    ephemeral_storage: 256Mi
-  limits:
-    cpu: 250m
-    memory: 256Mi
-    ephemeral_storage: 256Mi
+  # Service
+  service:
+    type: LoadBalancer
+    port: 80
+    containerPort: 8080
 
-replicaCount: 1
+  # Resources
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+      ephemeral_storage: 256Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+      ephemeral_storage: 256Mi
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 80
+  # Autoscaling
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 2
+    targetCPUUtilizationPercentage: 80
+
+
+
+
+
+
+
