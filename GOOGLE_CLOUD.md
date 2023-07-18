@@ -188,3 +188,7 @@ If existing in GKE:
 cd helm-chart
 helm package . && helm install back-resume back-resume-helm-chart-0.0.1.tgz
 ```
+
+# Google managed certificate
+
+Link: https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs
