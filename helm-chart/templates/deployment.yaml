@@ -62,8 +62,6 @@ spec:
             memory: {{ .Values.backResume.resources.limits.memory }}
             cpu: {{ .Values.backResume.resources.limits.cpu }}
             ephemeral-storage: {{ .Values.backResume.resources.limits.ephemeral_storage }}
-          resources:
-            {{- toYaml .Values.backResume.resources | nindent 12 }}
       {{- with .Values.backResume.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

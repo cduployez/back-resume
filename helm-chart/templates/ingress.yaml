@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "helm-chart.back-resume.fullname" . }}
+  labels:
+    {{- include "helm-chart.back-resume.labels" . | nindent 4 }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: {{ .Values.backResume.ingress.className }}
+  rules:
+    - host: {{ .Values.backResume.host }}
+      http:
+        paths:
+          - path: {{ .Values.backResume.ingress.path }}(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "helm-chart.back-resume.fullname" . }}
+                port:
+                  number: {{ .Values.backResume.service.port }}
