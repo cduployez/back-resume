@@ -9,7 +9,11 @@ spec:
   selector:
     {{- include "helm-chart.back-resume.selectorLabels" . | nindent 4 }}
   ports:
-  - port: {{ .Values.backResume.service.port }}
+  - port: {{ .Values.backResume.service.http.port }}
     targetPort: {{ .Values.backResume.service.containerPort }}
     protocol: TCP
-    name: http
+    name: {{ .Values.backResume.service.http.name }}
+  - port: {{ .Values.backResume.service.https.port }}
+    targetPort: {{ .Values.backResume.service.containerPort }}
+    protocol: TCP
+    name: {{ .Values.backResume.service.https.name }}

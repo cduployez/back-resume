@@ -23,7 +23,12 @@ backResume:
 
   # Service
   service:
-    port: 80
+    http:
+      name: http
+      port: 80
+    https:
+      name: https
+      port: 443
     containerPort: 8080
 
   # Host

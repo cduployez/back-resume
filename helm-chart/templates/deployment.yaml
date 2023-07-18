@@ -32,13 +32,13 @@ spec:
         image: "{{ .Values.backResume.image.repository }}:{{ .Values.backResume.image.tag | default .Chart.AppVersion }}"
         # This app listens on port 8080 for web traffic by default.
         ports:
-          - name: http
+          - name: {{ .Values.backResume.service.http.name }}
             containerPort: {{ .Values.backResume.service.containerPort }}
             protocol: TCP
         livenessProbe:
           httpGet:
             path: /actuator/health/liveness
-            port: http
+            port: {{ .Values.backResume.service.http.name }}
           # Should wait 15 seconds before performing the first probe
           initialDelaySeconds: 15
           # The application will have a maximum of 5 minutes (30 * 10 = 300s)
@@ -47,7 +47,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
-            port: http
+            port: {{ .Values.backResume.service.http.name }}
           # Should wait 15 seconds before performing the first probe
           initialDelaySeconds: 15
           # The application will have a maximum of 5 minutes (30 * 10 = 300s)
