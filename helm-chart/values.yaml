@@ -7,6 +7,9 @@ backResume:
   nameOverride: "back-resume"
   fullnameOverride: "back-resume"
 
+  # Force redeployment
+  forceRedeployment: true
+
   # Replicas
   replicaCount: 1
 

@@ -13,10 +13,10 @@ spec:
       {{- include "helm-chart.back-resume.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.backResume.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- if .Values.backResume.forceRedeployment }}
+        rollme: {{ randAlphaNum 5 | quote }}
+        {{- end }}
       labels:
         {{- include "helm-chart.back-resume.selectorLabels" . | nindent 8 }}
     spec:
@@ -62,16 +62,4 @@ spec:
             memory: {{ .Values.backResume.resources.limits.memory }}
             cpu: {{ .Values.backResume.resources.limits.cpu }}
             ephemeral-storage: {{ .Values.backResume.resources.limits.ephemeral_storage }}
-      {{- with .Values.backResume.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.backResume.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.backResume.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
 ---
