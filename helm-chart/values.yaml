@@ -40,6 +40,23 @@ backResume:
   # Host
   host: clement.duployez.fr
 
+  # Config map
+  configMap:
+    # CORS
+    cors:
+      allowed_urls: "https://clement.duployez.fr, https://angular.duployez.fr, http://localhost:11001"
+
+    # Spring Actuator
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
+      server:
+        port: 8080 # Same as containerPort
+        ssl:
+          enabled: false # HTTPS is managed at ingress level, not container level
+
   # Resources
   resources:
     requests:

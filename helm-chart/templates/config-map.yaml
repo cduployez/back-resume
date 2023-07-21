@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "helm-chart.back-resume.fullname" . }}
+  labels:
+    {{- include "helm-chart.back-resume.labels" . | nindent 4 }}
+data:
+  # CORS
+  CORS_ALLOWED-URLS: {{ .Values.backResume.configMap.cors.allowed_urls | quote }}
+
+  # Spring Actuator
+  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: {{ .Values.backResume.configMap.management.endpoints.web.exposure.include | quote }}
+  MANAGEMENT_SERVER_PORT: {{ .Values.backResume.configMap.management.server.port | quote }}
+  MANAGEMENT_SERVER_SSL_ENABLED: {{ .Values.backResume.configMap.management.server.ssl.enabled | quote }}
