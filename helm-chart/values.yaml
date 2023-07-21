@@ -44,7 +44,7 @@ backResume:
   configMap:
     # CORS
     cors:
-      allowed_urls: "https://clement.duployez.fr, https://angular.duployez.fr, http://localhost:11001"
+      allowed_urls: "https://clement.duployez.fr, https://cduployez.github.io, http://localhost:11001"
 
     # Spring Actuator
     management:
