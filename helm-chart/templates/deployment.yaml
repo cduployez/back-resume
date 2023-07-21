@@ -53,6 +53,9 @@ spec:
           # The application will have a maximum of 5 minutes (30 * 10 = 300s)
           periodSeconds: 10
           failureThreshold: 30
+        envFrom:
+          - configMapRef:
+              name: {{ include "helm-chart.back-resume.fullname" . }}
         resources:
           requests:
             memory: {{ .Values.backResume.resources.requests.memory }}
