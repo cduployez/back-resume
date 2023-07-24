@@ -1,7 +1,7 @@
-package fr.cduployez.backresume.core.spring.service;
+package fr.cduployez.backresume.core.spring.services;
 
 import fr.cduployez.backresume.core.data.dtos.ExperienceDto;
-import fr.cduployez.backresume.core.spring.manager.ExperienceManager;
+import fr.cduployez.backresume.core.spring.managers.ExperienceManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

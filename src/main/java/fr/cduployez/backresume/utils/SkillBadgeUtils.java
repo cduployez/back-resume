@@ -4,6 +4,7 @@ import fr.cduployez.backresume.core.data.dtos.SkillBadgeDto;
 import fr.cduployez.backresume.core.data.enums.SkillEnum;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,8 +12,8 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class SkillBadgeUtils {
 
-    public static SkillBadgeDto angular(int version) {
-        return new SkillBadgeDto("Angular %d".formatted(version), SkillEnumUtils.angularKeyword, SkillEnumUtils.angularChildrenKeywords);
+    public static SkillBadgeDto angular(@Nullable Integer version) {
+        return new SkillBadgeDto(version != null ? "Angular %d".formatted(version) : "Angular", SkillEnumUtils.angularKeyword, SkillEnumUtils.angularChildrenKeywords);
     }
 
     public static SkillBadgeDto azure() {
@@ -110,8 +111,8 @@ public final class SkillBadgeUtils {
         return new SkillBadgeDto(".NET", List.of(SkillEnum.NET), SkillEnumUtils.netChildrenKeywords);
     }
 
-    public static SkillBadgeDto android(int version) {
-        return new SkillBadgeDto("Android %d".formatted(version), List.of(SkillEnum.ANDROID), SkillEnumUtils.androidChildrenKeywords);
+    public static SkillBadgeDto android(@Nullable Integer version) {
+        return new SkillBadgeDto(version != null ? "Android %d".formatted(version) : "Android", List.of(SkillEnum.ANDROID), SkillEnumUtils.androidChildrenKeywords);
     }
 
     public static SkillBadgeDto xamarin() {
@@ -138,9 +139,16 @@ public final class SkillBadgeUtils {
         return new SkillBadgeDto("JavaScript", List.of(SkillEnum.JAVASCRIPT));
     }
 
+    public static SkillBadgeDto typeScript() {
+        return new SkillBadgeDto("TypeScript", List.of(SkillEnum.TYPESCRIPT), SkillEnumUtils.typeScriptChildrenKeywords);
+    }
+
     public static SkillBadgeDto googleMaps() {
         return new SkillBadgeDto("Google Maps", List.of(), List.of(SkillEnum.JAVASCRIPT));
     }
 
 
+    public static SkillBadgeDto gitlabCi() {
+        return new SkillBadgeDto("Gitlab-CI", List.of(SkillEnum.GITLAB_CI));
+    }
 }

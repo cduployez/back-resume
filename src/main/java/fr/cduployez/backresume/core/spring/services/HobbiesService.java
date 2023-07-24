@@ -1,7 +1,7 @@
-package fr.cduployez.backresume.core.spring.service;
+package fr.cduployez.backresume.core.spring.services;
 
 import fr.cduployez.backresume.core.data.dtos.HobbyDto;
-import fr.cduployez.backresume.core.spring.manager.HobbyManager;
+import fr.cduployez.backresume.core.spring.managers.HobbyManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

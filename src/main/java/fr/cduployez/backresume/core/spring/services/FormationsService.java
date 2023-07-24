@@ -1,7 +1,7 @@
-package fr.cduployez.backresume.core.spring.service;
+package fr.cduployez.backresume.core.spring.services;
 
 import fr.cduployez.backresume.core.data.dtos.FormationDto;
-import fr.cduployez.backresume.core.spring.manager.FormationManager;
+import fr.cduployez.backresume.core.spring.managers.FormationManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

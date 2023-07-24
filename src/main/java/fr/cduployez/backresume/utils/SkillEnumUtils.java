@@ -63,4 +63,5 @@ public class SkillEnumUtils {
 
     public static final List<SkillEnum> openshiftChildrenKeywords = List.of(SkillEnum.DOCKER, SkillEnum.KUBERNETES);
 
+    public static final List<SkillEnum> typeScriptChildrenKeywords = List.of(SkillEnum.JAVASCRIPT);
 }

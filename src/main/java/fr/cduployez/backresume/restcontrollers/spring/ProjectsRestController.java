@@ -1,7 +1,7 @@
 package fr.cduployez.backresume.restcontrollers.spring;
 
 import fr.cduployez.backresume.core.data.dtos.ProjectDto;
-import fr.cduployez.backresume.core.spring.service.ProjectsService;
+import fr.cduployez.backresume.core.spring.services.ProjectsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,6 @@
-package fr.cduployez.backresume.core.spring.manager;
+package fr.cduployez.backresume.core.spring.managers;
 
 import fr.cduployez.backresume.core.data.dtos.HobbyDto;
-import fr.cduployez.backresume.core.data.dtos.LanguageDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

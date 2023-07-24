@@ -1,7 +1,7 @@
 package fr.cduployez.backresume.restcontrollers.spring;
 
 import fr.cduployez.backresume.core.data.dtos.LanguageDto;
-import fr.cduployez.backresume.core.spring.service.LanguagesService;
+import fr.cduployez.backresume.core.spring.services.LanguagesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
