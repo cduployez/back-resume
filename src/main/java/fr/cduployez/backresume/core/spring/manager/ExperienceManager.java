@@ -2,11 +2,9 @@ package fr.cduployez.backresume.core.spring.manager;
 
 import fr.cduployez.backresume.core.data.dtos.DateRangeDto;
 import fr.cduployez.backresume.core.data.dtos.ExperienceDto;
-import fr.cduployez.backresume.core.data.dtos.SkillBadgeDto;
 import fr.cduployez.backresume.core.data.enums.JobTypeEnum;
 import fr.cduployez.backresume.utils.OffsetDateTimeUtils;
 import fr.cduployez.backresume.utils.SkillBadgeUtils;
-import fr.cduployez.backresume.utils.SkillEnumUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -30,14 +28,14 @@ public class ExperienceManager {
                         "Projet Ecobonus",
                         Collections.singletonList("Lead Developer au service d'un projet local et écologique visant à changer les habitudes des automobilistes"),
                         Arrays.asList(
-                                SkillBadgeUtils.java,
-                                SkillBadgeUtils.springBoot,
-                                new SkillBadgeDto("Angular 15", SkillEnumUtils.angularKeyword, SkillEnumUtils.angularChildrenKeywords),
-                                SkillBadgeUtils.docker,
-                                new SkillBadgeDto("Kubernetes", SkillEnumUtils.kubernetesKeyword, SkillEnumUtils.kubernetesChildrenKeywords),
-                                new SkillBadgeDto("Openshift", SkillEnumUtils.openshiftKeyword, SkillEnumUtils.openshiftChildrenKeywords),
-                                new SkillBadgeDto("Kafka"),
-                                new SkillBadgeDto("Etat d'esprit agile")
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.springBoot(),
+                                SkillBadgeUtils.angular(15),
+                                SkillBadgeUtils.docker(),
+                                SkillBadgeUtils.kubernetes(),
+                                SkillBadgeUtils.openshift(),
+                                SkillBadgeUtils.kafka(),
+                                SkillBadgeUtils.agile()
                         )
                 ),
                 new ExperienceDto(
@@ -50,27 +48,15 @@ public class ExperienceManager {
                         "Projet Maela",
                         List.of("Lead Developer au sein d'une équipe internationale en méthode agile, développement d'une solution de télésuivi médical pour professionnels de santé et patients"),
                         List.of(
-                                SkillBadgeUtils.java,
-                                SkillBadgeUtils.springBoot,
-                                new SkillBadgeDto(
-                                        "Angular 11",
-                                        SkillEnumUtils.angularKeyword,
-                                        SkillEnumUtils.angularChildrenKeywords
-                                ),
-                                new SkillBadgeDto("MySQL", SkillEnumUtils.mySqlKeyword),
-                                SkillBadgeUtils.docker,
-                                new SkillBadgeDto(
-                                        "Kubernetes",
-                                        SkillEnumUtils.kubernetesKeyword,
-                                        SkillEnumUtils.kubernetesChildrenKeywords
-                                ),
-                                new SkillBadgeDto(
-                                        "Azure",
-                                        SkillEnumUtils.azureKeyword,
-                                        SkillEnumUtils.azureChildrenKeywords
-                                ),
-                                new SkillBadgeDto("Etat d'esprit agile"),
-                                new SkillBadgeDto("Anglais")
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.springBoot(),
+                                SkillBadgeUtils.angular(11),
+                                SkillBadgeUtils.mySql(),
+                                SkillBadgeUtils.docker(),
+                                SkillBadgeUtils.kubernetes(),
+                                SkillBadgeUtils.azure(),
+                                SkillBadgeUtils.agile(),
+                                SkillBadgeUtils.english()
                         )
                 ),
                 new ExperienceDto(
@@ -83,13 +69,9 @@ public class ExperienceManager {
                         "Projet Dossier Médical Partagé",
                         List.of("Interconnexion du Dossier Médical Partagé avec l'Espace Numérique de Santé"),
                         List.of(
-                                SkillBadgeUtils.java,
-                                SkillBadgeUtils.springBoot,
-                                new SkillBadgeDto(
-                                        "Apache Tapestry",
-                                        SkillEnumUtils.apacheTapestryKeyword,
-                                        SkillEnumUtils.apacheTapestryChildrenKeywords
-                                )
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.springBoot(),
+                                SkillBadgeUtils.apacheTapestry()
                         )
                 ),
                 new ExperienceDto(
@@ -105,20 +87,12 @@ public class ExperienceManager {
                                 "Gestion et amélioration pendant la crise Covid-19 : dénombrement quotidien, suivi et analyse des parcours de soins des patients dans les hôpitaux"
                         ),
                         List.of(
-                                SkillBadgeUtils.java,
-                                new SkillBadgeDto(
-                                        "Spring 5",
-                                        SkillEnumUtils.springKeyword,
-                                        SkillEnumUtils.springChildrenKeywords
-                                ),
-                                SkillBadgeUtils.keycloak,
-                                new SkillBadgeDto(
-                                        "Angular 8",
-                                        SkillEnumUtils.angularKeyword,
-                                        SkillEnumUtils.angularChildrenKeywords
-                                ),
-                                new SkillBadgeDto("MySQL", SkillEnumUtils.mySqlKeyword),
-                                new SkillBadgeDto("Etat d'esprit agile")
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.spring(5),
+                                SkillBadgeUtils.keycloak(),
+                                SkillBadgeUtils.angular(8),
+                                SkillBadgeUtils.mySql(),
+                                SkillBadgeUtils.agile()
                         )
                 ),
                 new ExperienceDto(
@@ -131,14 +105,10 @@ public class ExperienceManager {
                         "Projet Télépaiement",
                         List.of("Mise en place du télépaiement des forfaits de post-stationnement"),
                         List.of(
-                                SkillBadgeUtils.java,
-                                new SkillBadgeDto(
-                                        "Java EE",
-                                        SkillEnumUtils.javaEeKeyword,
-                                        SkillEnumUtils.javaEeChildrenKeywords
-                                ),
-                                new SkillBadgeDto("Web", SkillEnumUtils.webKeywords),
-                                new SkillBadgeDto("MySQL", SkillEnumUtils.mySqlKeyword)
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.javaEe(),
+                                SkillBadgeUtils.web(),
+                                SkillBadgeUtils.mySql()
                         )
                 ),
                 new ExperienceDto(
@@ -151,21 +121,13 @@ public class ExperienceManager {
                         "Projets Datadock, Saveurs & Vie ; Sujets de R&D",
                         List.of("Assistant développeur sur différents projets de dématérialisation"),
                         List.of(
-                                SkillBadgeUtils.java,
-                                SkillBadgeUtils.springBoot,
-                                SkillBadgeUtils.keycloak,
-                                new SkillBadgeDto(
-                                        "Angular 2",
-                                        SkillEnumUtils.angularKeyword,
-                                        SkillEnumUtils.angularChildrenKeywords
-                                ),
-                                new SkillBadgeDto(
-                                        "Ionic 2",
-                                        SkillEnumUtils.angularKeyword,
-                                        SkillEnumUtils.angularChildrenKeywords
-                                ),
-                                new SkillBadgeDto("MongoDB", SkillEnumUtils.mongoDbKeyword),
-                                SkillBadgeUtils.docker
+                                SkillBadgeUtils.java(),
+                                SkillBadgeUtils.springBoot(),
+                                SkillBadgeUtils.keycloak(),
+                                SkillBadgeUtils.angular(2),
+                                SkillBadgeUtils.ionic(2),
+                                SkillBadgeUtils.mongoDb(),
+                                SkillBadgeUtils.docker()
                         )
                 ),
                 new ExperienceDto(
@@ -178,14 +140,10 @@ public class ExperienceManager {
                         "Projet IMail",
                         List.of("Développement de modules et optimisation pour la solution d'emailing professionnel IMAIL"),
                         List.of(
-                                SkillBadgeUtils.cSharp,
-                                new SkillBadgeDto(
-                                        "MVC .Net",
-                                        SkillEnumUtils.mvcNetKeyword,
-                                        SkillEnumUtils.mvcNetChildrenKeywords
-                                ),
-                                new SkillBadgeDto("Web", SkillEnumUtils.webKeywords),
-                                new SkillBadgeDto("SQL")
+                                SkillBadgeUtils.cSharp(),
+                                SkillBadgeUtils.mvcNet(),
+                                SkillBadgeUtils.web(),
+                                SkillBadgeUtils.mySql()
                         )
                 )
         );
