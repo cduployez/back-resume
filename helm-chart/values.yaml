@@ -42,6 +42,11 @@ backResume:
 
   # Config map
   configMap:
+    # Profile
+    duployez:
+      profile:
+        email: c.duployez+resume@gmail.com
+
     # CORS
     cors:
       allowed_urls: "https://clement.duployez.fr, https://cduployez.github.io, http://localhost:11001"

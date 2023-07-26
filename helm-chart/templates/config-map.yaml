@@ -5,6 +5,9 @@ metadata:
   labels:
     {{- include "helm-chart.back-resume.labels" . | nindent 4 }}
 data:
+  # Profile
+  DUPLOYEZ_PROFILE_EMAIL: {{ .Values.backResume.configMap.duployez.profile.email | quote }}
+
   # CORS
   CORS_ALLOWED-URLS: {{ .Values.backResume.configMap.cors.allowed_urls | quote }}
 
