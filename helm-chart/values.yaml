@@ -49,7 +49,7 @@ backResume:
 
     # CORS
     cors:
-      allowed_urls: "https://clement.duployez.fr, https://cduployez.github.io, http://localhost:11001"
+      allowed_urls: "https://clement.duployez.fr, https://cduployez.github.io, http://localhost:11001, http://localhost:11002"
 
     # Spring Actuator
     management:
